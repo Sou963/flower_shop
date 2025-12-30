@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Product - Floria</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 20px; }
+    .buy-form { max-width: 500px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .buy-form h2 { text-align: center; margin-bottom: 20px; }
+    .buy-form label { display: block; margin-top: 10px; font-weight: bold; }
+    .buy-form input, .buy-form select, .buy-form textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    .buy-form button { margin-top: 20px; width: 100%; padding: 10px; background: #e84393; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    .buy-form button:hover { background: #d63084; }
+  </style>
+</head>
+<body>
+
+  <form class="buy-form" id="buyForm">
+    <h2>Buy Product</h2>
+
+    <label for="productName">Product Name</label>
+    <input type="text" id="productName" placeholder="Enter product name" required>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" min="1" value="1" required>
+
+    <label for="buyerName">Your Name</label>
+    <input type="text" id="buyerName" placeholder="Enter your full name" required>
+
+    <label for="buyerEmail">Email</label>
+    <input type="email" id="buyerEmail" placeholder="Enter your email" required>
+
+    <label for="buyerAddress">Address</label>
+    <textarea id="buyerAddress" rows="3" placeholder="Enter your address" required></textarea>
+
+    <label for="paymentMethod">Payment Method</label>
+    <select id="paymentMethod" required>
+      <option value="">Select Payment Method</option>
+      <option value="cash">Cash on Delivery</option>
+      <option value="bkash">bKash</option>
+      <option value="nagad">Nagad</option>
+      <option value="card">Credit/Debit Card</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("buyForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const orderData = {
+        productName: document.getElementById("productName").value,
+        quantity: document.getElementById("quantity").value,
+        buyerName: document.getElementById("buyerName").value,
+        buyerEmail: document.getElementById("buyerEmail").value,
+        buyerAddress: document.getElementById("buyerAddress").value,
+        paymentMethod: document.getElementById("paymentMethod").value
+      };
+
+      console.log("Order Data:", orderData);
+      fetch("http://localhost:5000/api/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderData)
+      })
+      .then(res => res.json())
+      .then(data => alert("Order placed successfully!"))
+      .catch(err => alert("Server error"));
+      
+      alert("Order placed successfully!\nCheck console for data.");
+    });
+  </script>
+
+</body>
+</html>

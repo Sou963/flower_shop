@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Floria Premium Flower Boutique</title>
+    <meta name="description" content="Sign in to your Floria account to manage orders and wishlist.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <a href="index.html" class="logo">Floria<sub class="small">.com</sub></a>
+            <nav class="navbar">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#shop">Shop By</a>
+                <a href="index.html#collections">Collections</a>
+                <a href="index.html#services">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="cart-btn" class="fas fa-shopping-bag"><span>(0)</span></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+        </div>
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="Search for products...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </header>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-visual">
+                <div class="visual-content">
+                    <div class="flower-icon">🌸</div>
+                    <h2>Welcome to Floria</h2>
+                    <p>Discover premium flowers and bouquets for every special moment</p>
+                    <div class="features">
+                        <div class="feature"><i class="fas fa-check-circle"></i> Exclusive member offers</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> Track your orders</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> Save your wishlist</div>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-form-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="signin">Sign In</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="signinForm" class="auth-form active">
+                    <h2>Welcome Back!</h2>
+                    <p class="form-subtitle">Sign in to continue to your account</p>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signinEmail" placeholder="Email address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signinPassword" placeholder="Password" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-btn">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn apple">
+                            <i class="fab fa-apple"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form id="signupForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p class="form-subtitle">Join Floria for exclusive benefits</p>
+
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupName" placeholder="Full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="Email address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                    </div>
+
+                    <label class="terms-checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+
+                    <button type="submit" class="auth-btn">
+                        <span>Create Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box about-us">
+                <h3>Floria</h3>
+                <p>Premium online flower boutique with 99+ beautiful arrangements for every occasion.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-box links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="index.html#collections">Collections</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-box links">
+                <h3>Help</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+                <a href="#">Track Order</a>
+            </div>
+            <div class="footer-box newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe for special offers!</p>
+                <form>
+                    <input type="email" placeholder="Your email" class="email-input">
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="credit">© 2024 <a href="index.html">Floria</a> | Premium Flower Boutique</div>
+    </footer>
+
+    <!-- External JavaScript -->
+
+
+    <!-- Auth JavaScript -->
+     <script>
+/* ==============================
+   CONFIG
+================================ */
+const API_BASE = "http://localhost:5000/api";
+
+/* ==============================
+   HEADER INIT
+================================ */
+function initHeader() {
+    const cartBtn = document.querySelector('#cart-btn');
+    if (cartBtn) {
+        cartBtn.onclick = () => window.location.href = 'cart.html';
+    }
+
+    const userBtn = document.querySelector('#user-btn');
+    const user =
+        JSON.parse(localStorage.getItem('floriaUser')) ||
+        JSON.parse(sessionStorage.getItem('floriaUser'));
+
+    if (user && user.loggedIn && userBtn) {
+        userBtn.style.color = '#e84393';
+        userBtn.onclick = () => {
+            if (confirm("Sign out করবেন?")) {
+                localStorage.removeItem("floriaUser");
+                localStorage.removeItem("floriaToken");
+                sessionStorage.clear();
+                location.reload();
+            }
+        };
+    }
+}
+document.addEventListener("DOMContentLoaded", initHeader);
+
+/* ==============================
+   TOAST MESSAGE
+================================ */
+function showToast(message) {
+    const old = document.querySelector(".toast-notification");
+    if (old) old.remove();
+
+    const toast = document.createElement("div");
+    toast.className = "toast-notification";
+    toast.textContent = message;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, #333, #555);
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 25px;
+        z-index: 99999;
+        font-size: 14px;
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+}
+
+/* ==============================
+   TAB SWITCHING
+================================ */
+document.querySelectorAll(".auth-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+        document.querySelectorAll(".auth-tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".auth-form").forEach(f => f.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(
+            tab.dataset.tab === "signin" ? "signinForm" : "signupForm"
+        ).classList.add("active");
+    });
+});
+
+/* ==============================
+   TOGGLE PASSWORD
+================================ */
+document.querySelectorAll(".toggle-password").forEach(btn => {
+    btn.onclick = () => {
+        const input = btn.previousElementSibling;
+        const icon = btn.querySelector("i");
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            input.type = "password";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    };
+});
+
+/* ==============================
+   SIGN UP (REGISTER)
+================================ */
+document.getElementById("signupForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = signupName.value.trim();
+    const email = signupEmail.value.trim();
+    const password = signupPassword.value;
+    const confirm = confirmPassword.value;
+
+    if (password !== confirm) {
+        showToast("Password মিলছে না");
+        return;
+    }
+    if (password.length < 6) {
+        showToast("Password কমপক্ষে ৬ অক্ষরের হতে হবে");
+        return;
+    }
+
+    try {
+        const res = await fetch(`${API_BASE}/auth/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            showToast(data.error || "Registration failed");
+            return;
+        }
+
+        showToast("Account তৈরি হয়েছে 🌸 এখন Sign In করুন");
+        document.querySelector('[data-tab="signin"]').click();
+
+    } catch (err) {
+        showToast("Server error");
+    }
+});
+
+/* ==============================
+   SIGN IN (LOGIN)
+================================ */
+document.getElementById("signinForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = signinEmail.value.trim();
+    const password = signinPassword.value;
+    const remember = rememberMe.checked;
+
+    try {
+        const res = await fetch(`${API_BASE}/auth/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            showToast(data.error || "Login failed");
+            return;
+        }
+
+        const storage = remember ? localStorage : sessionStorage;
+
+        storage.setItem("floriaToken", data.token);
+        storage.setItem("floriaUser", JSON.stringify({
+            id: data.user.id,
+            name: data.user.name,
+            email: data.user.email,
+            loggedIn: true
+        }));
+
+        showToast(`Welcome back, ${data.user.name} 🌸`);
+        setTimeout(() => location.href = "index.html", 1200);
+
+    } catch (err) {
+        showToast("Server error");
+    }
+});
+
+/* ==============================
+   AUTO REDIRECT IF LOGGED IN
+================================ */
+const loggedUser =
+    JSON.parse(localStorage.getItem("floriaUser")) ||
+    JSON.parse(sessionStorage.getItem("floriaUser"));
+
+if (loggedUser && loggedUser.loggedIn) {
+    location.href = "index.html";
+}
+</script>
+
+ 
+</body>
+
+</html>
